@@ -59,22 +59,24 @@ namespace GT2
         private bool isBarrelAtRest = false;
 
         /// <summary>
-        /// When true, the turret can only rotate horizontally within given limits.
+        /// True when the turret cannot rotate freely in the horizontal axis.
         /// </summary>
         public bool HasLimitedTraverse { get { return hasLimitedTraverse; } }
 
         /// <summary>
-        /// True when the turret is idle and at its default position.
+        /// True when the turret is idle and at its resting position.
         /// </summary>
         public bool IsTurretAtRest { get { return isBarrelAtRest && isBaseAtRest; } }
 
         /// <summary>
-        /// When true, the turret is aimed at the current target.
+        /// True when the turret is aimed at the given <see cref="AimPosition"/>. When the turret
+        /// is idle, this is never true.
         /// </summary>
         public bool IsAimed { get { return isAimed; } }
 
         /// <summary>
-        /// Angle in degrees to the target. When the turret is idle, this reports 999;
+        /// Angle in degress to the given <see cref="AimPosition"/>. When the turret is idle,
+        /// the angle reports 999.
         /// </summary>
         public float AngleToTarget { get { return IsIdle ? 999f : angleToTarget; } }
 

@@ -32,6 +32,14 @@ The core script of this project. This assumes a turret with a base gameobject/tr
 
 Included in the project is an archetype prefab that can be used as a basis for any turrets you might need to create. It's already configured, and only requires you to customize it to your needs and swap out the models.
 
+### Properties
+One of the new additions from [the old turret code](https://github.com/brihernandez/GunTurrets) is a handful of useful properties.
+
+* **HasLimitedTraverse:** True when the turret cannot rotate freely in the horizontal axis.
+* **IsTurretAtRest:** True when the turret is idle and at its resting position.
+* **IsAimed:** True when the turret is aimed at the given `AimPosition`. When the turret is idle, this is never true.
+* **AngleToTarget:** Angle in degrees to the given `AimPosition`. When the turret is idle, the angle reports 999.
+
 ### Turret Hierarchy
 
 Turrets must follow a specific hierarchy. The image below shows an example.
